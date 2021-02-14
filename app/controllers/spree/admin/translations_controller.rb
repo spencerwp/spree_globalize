@@ -33,8 +33,11 @@ module Spree
 
     def resource
       STDERR.puts "Spree::#{params[:resource]}"
+      STDERR.puts "Spree::#{params[:resource].singularize}"
+      STDERR.puts "Spree::#{params[:resource].classify.singularize}"
+      STDERR.puts "Spree::#{params[:resource].classify.singularize}".constantize
       STDERR.puts klass.class.name
-      STDERR.puts klass.class.table_name.singularize
+      STDERR.puts "Spree::#{params[:resource].classify.singularize}".constantize.class_name
       #if slugged_models.include? klass.class_name
         res = klass.friendly.find(params[:resource_id])
       #else
