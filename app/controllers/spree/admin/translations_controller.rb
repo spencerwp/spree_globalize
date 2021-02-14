@@ -28,21 +28,15 @@ module Spree
     end
 
     def klass
-      @klass ||= "Spree::#{params[:resource].classify}".constantize
+      @klass ||= "Spree::#{params[:resource].classify.singularize}".constantize
     end
 
     def resource
-      STDERR.puts "Spree::#{params[:resource]}"
-      STDERR.puts "Spree::#{params[:resource].singularize}"
-      STDERR.puts "Spree::#{params[:resource].classify.singularize}"
-      STDERR.puts "Spree::#{params[:resource].classify.singularize}".constantize
-      STDERR.puts klass.class.name
-      STDERR.puts "Spree::#{params[:resource].classify.singularize}".constantize.class_name
-      #if slugged_models.include? klass.class_name
+      if slugged_models.include? klass.to_s
         res = klass.friendly.find(params[:resource_id])
-      #else
-      #  res = klass.find(params[:resource_id])
-      #end
+      else
+        res = klass.find(params[:resource_id])
+      end
       @resource ||= res
     end
 
@@ -54,7 +48,7 @@ module Spree
     end
 
     def slugged_models
-      ["SpreeProduct"]
+      ["Spree::Product"]
     end
   end
 end
