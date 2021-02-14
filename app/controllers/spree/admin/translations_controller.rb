@@ -32,12 +32,14 @@ module Spree
     end
 
     def resource
+      STDERR.puts "Spree::#{params[:resource]}"
       STDERR.puts klass.class.name
-      if klass.method_defined? :class_name && slugged_models.include? klass.class_name
+      STDERR.puts klass.class.table_name.singularize
+      #if slugged_models.include? klass.class_name
         res = klass.friendly.find(params[:resource_id])
-      else
-        res = klass.find(params[:resource_id])
-      end
+      #else
+      #  res = klass.find(params[:resource_id])
+      #end
       @resource ||= res
     end
 
