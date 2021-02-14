@@ -17,7 +17,7 @@ module SpreeGlobalize
         names = params.keys
 
         names.each do |n|
-          translated_attribute_names.each do |t|
+          mobility_attributes.each do |t|
             if n.to_s.starts_with? t.to_s
               params[:"translations_#{n}"] = params[n]
               params.delete n
