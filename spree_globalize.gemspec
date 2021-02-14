@@ -24,8 +24,9 @@ Gem::Specification.new do |s|
   spree_version =  '>= 4.2.0.rc4', '< 5.0'
   s.add_dependency 'spree_core', spree_version
   s.add_runtime_dependency 'spree_extension'
-  s.add_runtime_dependency 'friendly_id-globalize'
-  s.add_runtime_dependency 'globalize'
+  #s.add_runtime_dependency 'friendly_id-globalize'
+  #s.add_runtime_dependency 'globalize'
+  s.add_runtime_dependency 'mobility'
   s.add_runtime_dependency 'spree_i18n'
   s.add_runtime_dependency 'i18n_data'
   s.add_runtime_dependency 'rails-i18n'
