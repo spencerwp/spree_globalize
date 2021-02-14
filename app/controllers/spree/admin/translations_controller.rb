@@ -32,12 +32,12 @@ module Spree
     end
 
     def resource
-      #STDERR.puts klass.class.name
-      #@resource ||= if slugged_models.include? klass.class_name
-      #  klass.friendly.find(params[:resource_id])
-      #else
+      STDERR.puts klass.class.name
+      @resource ||= if klass.method_defined? :class_name && slugged_models.include? klass.class_name
+        klass.friendly.find(params[:resource_id])
+      else
         klass.find(params[:resource_id])
-      #end
+      end
     end
 
     def collection_url
