@@ -19,17 +19,17 @@ module SpreeGlobalize
     #   # wrong, spanish locale would fallback to german first instead of :en (default)
     #   { en: [:en, :de, :es], es: [:es, :de, :en] .. }
     #
-    def self.config!
-      supported = Spree::Store.all.map(&:supported_locales_list).flatten.uniq
-      default = I18n.default_locale
-
-      Globalize.fallbacks = supported.inject({}) do |fallbacks, locale|
-        if locale.to_sym == default
-          fallbacks.merge(locale => [locale].push(supported-[locale]).flatten)
-        else
-          fallbacks.merge(locale => [locale, default].push(supported-[locale, default]).flatten)
-        end
-      end
-    end
+    #def self.config!
+    #  supported = Spree::Store.all.map(&:supported_locales_list).flatten.uniq
+    #  default = I18n.default_locale
+    #
+    #  Globalize.fallbacks = supported.inject({}) do |fallbacks, locale|
+    #    if locale.to_sym == default
+    #      fallbacks.merge(locale => [locale].push(supported-[locale]).flatten)
+    #    else
+    #      fallbacks.merge(locale => [locale, default].push(supported-[locale, default]).flatten)
+    #    end
+    #  end
+    #end
   end
 end
