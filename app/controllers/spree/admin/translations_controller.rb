@@ -32,6 +32,7 @@ module Spree
     end
 
     def resource
+      STDERR.puts klass.class.name
       @resource ||= if slugged_models.include? klass.class_name
         klass.friendly.find(params[:resource_id])
       else
