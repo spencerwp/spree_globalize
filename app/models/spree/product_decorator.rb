@@ -3,7 +3,7 @@ module Spree
     def self.prepended(base)
       base.extend Mobility
 
-      base.translates :name, :description, :meta_title, :meta_description, :meta_keywords, :slug, fallbacks_for_empty_translations: true
+      base.translates :name, :description, :meta_title, :meta_description, :meta_keywords, :slug
       base.friendly_id :slug_candidates, use: [:history, :globalize]
 
       base.translation_class.acts_as_paranoid
