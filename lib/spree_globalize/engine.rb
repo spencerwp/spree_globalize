@@ -1,5 +1,5 @@
 require 'mobility'
-require 'friendly_id/globalize'
+#require 'friendly_id/globalize'
 
 module SpreeGlobalize
   class Engine < Rails::Engine
