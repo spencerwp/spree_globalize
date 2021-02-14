@@ -46,7 +46,7 @@ module ActionView
         #object      = @object.translation_for(locale)
         STDERR.puts locale
         STDERR.puts @object.translations
-        object      = @object.translations.any? { |t| t.locale.to_sym == locale}
+        object      = @object.translations.detect{|t| t.locale.to_s == locale.to_s}
         @template.concat @template.hidden_field_tag("#{object_name}[id]", object ? object.id : "")
         @template.concat @template.hidden_field_tag("#{object_name}[locale]", locale)
         @template.fields_for(object_name, object, *args, &proc)
