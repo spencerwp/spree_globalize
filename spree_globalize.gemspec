@@ -27,6 +27,8 @@ Gem::Specification.new do |s|
   #s.add_runtime_dependency 'friendly_id-globalize'
   #s.add_runtime_dependency 'globalize'
   s.add_runtime_dependency 'mobility'
+  s.add_runtime_dependency 'mobility-ransack'
+  s.add_runtime_dependency 'friendly_id-mobility'
   s.add_runtime_dependency 'spree_i18n'
   s.add_runtime_dependency 'i18n_data'
   s.add_runtime_dependency 'rails-i18n'
