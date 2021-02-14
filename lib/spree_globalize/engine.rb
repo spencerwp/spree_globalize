@@ -1,4 +1,4 @@
-require 'globalize'
+require 'mobility'
 require 'friendly_id/globalize'
 
 module SpreeGlobalize
