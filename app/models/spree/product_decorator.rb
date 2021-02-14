@@ -1,6 +1,8 @@
 module Spree
   module ProductDecorator
     def self.prepended(base)
+      base.extend Mobility
+
       base.translates :name, :description, :meta_title, :meta_description, :meta_keywords, :slug, fallbacks_for_empty_translations: true
       base.friendly_id :slug_candidates, use: [:history, :globalize]
 
@@ -20,7 +22,7 @@ module Spree
         clauses = source.map do |(field, value, arel)|
           arel[field].matches("%#{value}%")
         end.inject(:or)
-  
+
         joins(:translations).where(translations[:locale].eq(I18n.locale)).where(clauses)
       end
     end

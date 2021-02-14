@@ -1,5 +1,6 @@
 module Spree::PromotionDecorator
   def self.prepended(base)
+    base.extend Mobility
     base.translates :name, :description, fallbacks_for_empty_translations: true
   end
 
