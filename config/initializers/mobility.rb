@@ -42,7 +42,7 @@ Mobility.configure do
     # name as default to change the global default, or to +translates+ in any
     # model to change it for that model alone.
     #
-    query :trans
+    query
 
     # Cache
     #
