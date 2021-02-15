@@ -111,6 +111,6 @@ Mobility.configure do
     # with translated and untranslated attributes, respectively. Be aware that
     # this plugin can create conflicts with other gems.
     #
-    # attribute_methods
+    attribute_methods
   end
 end
