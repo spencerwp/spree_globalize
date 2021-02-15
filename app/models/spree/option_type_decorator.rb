@@ -1,6 +1,5 @@
 module Spree::OptionTypeDecorator
   def self.prepended(base)
-    base.extend Mobility
     base.translates :name, :presentation
   end
 
