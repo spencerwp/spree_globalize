@@ -6,7 +6,6 @@ module SpreeGlobalize
 
     included do |klass|
       extend Mobility
-      default_scope { i18n }
 
       has_many :translations
       accepts_nested_attributes_for :translations

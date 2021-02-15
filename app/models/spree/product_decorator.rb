@@ -4,6 +4,10 @@ module Spree
       base.translates :name, :description, :meta_title, :meta_description, :meta_keywords, :slug
       base.friendly_id :slug_candidates, use: [:history, :mobility]
 
+      base.class_eval do
+        default_scope { i18n }
+      end
+      
       #base.translation_class.acts_as_paranoid
       #base.translation_class.after_destroy :punch_slug
       #base.translation_class.default_scopes = []
