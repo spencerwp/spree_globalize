@@ -7,7 +7,7 @@ module Spree
       base.class_eval do
         default_scope { i18n }
       end
-      
+
       #base.translation_class.acts_as_paranoid
       #base.translation_class.after_destroy :punch_slug
       #base.translation_class.default_scopes = []
