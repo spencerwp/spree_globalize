@@ -7,8 +7,8 @@ module SpreeGlobalize
     included do |klass|
       extend Mobility
 
-      #has_many :translations
-      #accepts_nested_attributes_for :translations
+      has_many :translations
+      accepts_nested_attributes_for :translations
       klass.whitelisted_ransackable_associations ||= []
       klass.whitelisted_ransackable_associations |= ['translations']
     end
