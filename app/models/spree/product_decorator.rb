@@ -56,4 +56,4 @@ module Spree
   end
 end
 
-::Spree::Product.prepend(Spree::ProductDecorator)
+::Spree::Product.prepend(Spree::ProductDecorator) if ::Spree::Product.included_modules.exclude?(Spree::ProductDecorator)

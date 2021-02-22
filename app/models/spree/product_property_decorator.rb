@@ -6,4 +6,4 @@ module Spree::ProductPropertyDecorator
   Spree::ProductProperty.include SpreeGlobalize::Translatable
 end
 
-::Spree::ProductProperty.prepend(Spree::ProductPropertyDecorator)
+::Spree::ProductProperty.prepend(Spree::ProductPropertyDecorator) if ::Spree::ProductProperty.included_modules.exclude?(Spree::ProductPropertyDecorator)

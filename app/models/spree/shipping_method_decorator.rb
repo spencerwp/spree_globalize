@@ -6,4 +6,4 @@ module Spree::ShippingMethodDecorator
   Spree::ShippingMethod.include SpreeGlobalize::Translatable
 end
 
-::Spree::ShippingMethod.prepend(Spree::ShippingMethodDecorator)
+::Spree::ShippingMethod.prepend(Spree::ShippingMethodDecorator) if ::Spree::ShippingMethod.included_modules.exclude?(Spree::ShippingMethodDecorator)
